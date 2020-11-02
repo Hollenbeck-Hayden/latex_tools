@@ -1,0 +1,19 @@
+#!/bin/bash
+
+latex_dir=".tex"
+
+target=$1
+target_name="${target%.*}"
+
+if [[ ! -d $latex_dir ]]; then
+	mkdir $latex_dir
+fi
+
+cd $latex_dir
+	cp ../$target $target
+	ppdflatex -q -- $target
+	#lualatex -q -- $target
+cd ..
+
+
+mv $latex_dir/$target_name.pdf .

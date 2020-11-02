@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Need to update template path with source of template
+
+filename=$1
+template_path=""
+
+cp $template_path $1
