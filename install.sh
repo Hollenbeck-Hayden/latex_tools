@@ -5,7 +5,8 @@ bin_dir=$HOME/bin
 
 bin_link() {
     echo "Linking $1"
-    ln -s $1 $bin_dir/$1
+    my_dir=$(pwd)
+    ln -s $my_dir/$1 $bin_dir/$1
 }
 
 echo "bin directory: ${bin_dir}"
