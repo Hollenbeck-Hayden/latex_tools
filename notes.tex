@@ -1,11 +1,34 @@
 \documentclass[12pt]{article}
 \usepackage[letterpaper, portrait, margin=0.5in]{geometry}
 \usepackage[utf8]{inputenc}
+
 \usepackage{amsmath}
 \usepackage{amsthm}
-\usepackage{knmacros}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage{bm}
 
 \setlength{\parskip}{1em}
 
+\newcommand{\diff}{\mathop{}\!\mathrm{d}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+\theoremsytle{definition}
+\newtheorem{defn}{Defn}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{corl}{Corollary}[section]
+
+\newenvironment{problem}[1]
+    {\noindent
+    \textbf{#1})
+    }
+    {
+    \vspace{12pt}
+    }
+
 \begin{document}
+
+Empty doc
+
 \end{document}

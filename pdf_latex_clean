@@ -1,19 +1,25 @@
 #!/bin/bash
 
-latex_dir=".tex"
-
-target=$1
-target_name="${target%.*}"
-
-if [[ ! -d $latex_dir ]]; then
-	mkdir $latex_dir
+if [[ $# -ne 1 ]]; then
+    echo "Usage: $0 <filename.tex>"
+    exit 1
 fi
 
-cd $latex_dir
-	cp ../$target $target
-	ppdflatex -q -- $target
-	#lualatex -q -- $target
-cd ..
+target_file="$(realpath "$1")"
+base_dir="$(dirname "$target_file")"
+working_dir="$base_dir/.tex"
 
+echo "Target file: $target_file"
+echo "Base Dir: $base_dir"
+echo "Working Dir: $working_dir"
 
-mv $latex_dir/$target_name.pdf .
+if [[ ! -d "$base_dir" ]]; then
+    echo "Directory $base_dir doesn't exist, are you sure this is a file?"
+    exit 1
+fi
+
+mkdir $working_dir
+cd $working_dir
+# pdflatex $target_file
+latexmk -pdf $target_file
+mv "$(basename "target_file" .tex).pdf" $base_dir

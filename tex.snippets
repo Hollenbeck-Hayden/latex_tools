@@ -1,7 +1,16 @@
+
+# ----- Environment snippets
+
 snippet beg "LaTeX begin section" b
 \begin{$1}
 	$2
-\end{$1}
+\end{$1}$0
+endsnippet
+
+snippet eqn "Latex equation" b
+\begin{equation*}
+	$1
+\end{equation*}$0
 endsnippet
 
 snippet spl "LaTeX split equation" b
@@ -10,7 +19,7 @@ snippet spl "LaTeX split equation" b
 	$1
 		&$2
 \end{split}
-\end{equation*}
+\end{equation*}$0
 endsnippet
 
 snippet def "LaTeX definition" b
@@ -22,13 +31,25 @@ endsnippet
 snippet thm "LaTeX theorem" b
 \begin{thm}[$1]
 	$2
-\end{thm}
+\end{thm}$0
 endsnippet
 
-snippet eq "Latex equation" b
-\begin{equation*}
+snippet prop "Latex proposition" b
+\begin{prop}[$1]
+	$2
+\end{prop}$0
+endsnippet
+
+snippet lem "Latex lemma" b
+\begin{lem}[$1]
+	$2
+\end{lem}$0
+endsnippet
+
+snippet cor "Latex corollary" b
+\begin{cor}
 	$1
-\end{equation*}
+\end{cor}$0
 endsnippet
 
 snippet fig "LaTex figure" b
@@ -36,4 +57,62 @@ snippet fig "LaTex figure" b
 	\centering
 	\includegraphics[width=0.5\textwidth]{$1}
 	\caption{$2}
+	\label{$3}
 \end{figure}
+endsnippet
+
+snippet pmat "P-matrix" i
+\begin{pmatrix}
+	$1
+\end{pmatrix}$0
+endsnippet
+
+# ----- Inline math snippets
+
+snippet // "Fraction" i
+\\frac{$1}{$2}$0
+endsnippet
+
+snippet big( "Paren pair" i
+\left( $1 \right) $0
+endsnippet
+
+snippet big[ "Bracket pair" i
+\left[ $1 \right] $0
+endsnippet
+
+snippet big{ "Brace pair" i
+\left{ $1 \right} $0
+endsnippet
+
+snippet <> "Angle pair" i
+\left\langle $1 \right\rangle $0
+endsnippet
+
+snippet dd "Differential" i
+\frac{\diff $1}{\diff $2} $0
+endsnippet
+
+snippet pp "Partial" i
+\frac{\partial $1}{\partial $2} $0
+endsnippet
+
+snippet ,, "Bra" i
+\bra{$1}$0
+endsnippet
+
+snippet .. "Ket" i
+\ket{$1}$0
+endsnippet
+
+snippet <|> "Braket" i
+\braket{$1|$2} $0
+endsnippet
+
+snippet st "Square root" i
+\sqrt{$1} $0
+endsnippet
+
+snippet ex "Exponential" i
+e^{$1} $0
+endsnippet
